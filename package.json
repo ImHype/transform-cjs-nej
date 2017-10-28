@@ -21,10 +21,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ImHype/nej-loader.git"
+    "url": "git+https://github.com/ImHype/transform-cjs-nej.git"
   },
   "bugs": {
-    "url": "https://github.com/ImHype/nej-loader/issues"
+    "url": "https://github.com/ImHype/transform-cjs-nej/issues"
   },
-  "homepage": "https://github.com/ImHype/nej-loader#readme"
+  "homepage": "https://github.com/ImHype/transform-cjs-nej#readme"
 }
