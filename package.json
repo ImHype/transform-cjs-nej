@@ -1,0 +1,30 @@
+{
+  "name": "transform-cjs-nej",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "source-map": "^0.5.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.5.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImHype/nej-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ImHype/nej-loader/issues"
+  },
+  "homepage": "https://github.com/ImHype/nej-loader#readme"
+}
