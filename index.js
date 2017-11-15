@@ -3,7 +3,7 @@ const AnalyseCode = require('./src/ParseCode');
 const TransformCode = require( './src/TransformCode');
 const SourceMap = require( './src/SourceMap');
 
-function nejLoader({
+function transform({
     raw, filename
 }, {
     alias = [],
@@ -64,23 +64,27 @@ function nejLoader({
         isPatch
     });
 
-    const compiled = [headCode, targetContent].join('');
+    const compiled = [ headCode, targetContent ].join('');
     let sourceMap;
 
     if (needSourceMap) {
-        sourceMap = SourceMap({
-            headCode,
-            sourceContent,
-            targetContent,
-            declarations,
-            filename
-        });
+        try {
+            sourceMap = SourceMap({
+                headCode,
+                sourceContent,
+                targetContent,
+                declarations,
+                filename
+            }).toJSON();
+        } catch(e) {
+            console.warn(`SourceMap setup failed：${filename}!`);
+            // console.error(e);
+        }
     }
 
     return {
-        compiled: compiled,
-        sourceMap: sourceMap ? sourceMap.toJSON(): {}
+        compiled, sourceMap
     };
 }
 
-module.exports = nejLoader;
+module.exports = transform;

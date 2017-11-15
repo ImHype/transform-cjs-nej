@@ -1,4 +1,4 @@
-const {SourceMapGenerator} = require('source-map');
+const { SourceMapGenerator } = require('source-map');
 
 module.exports = function ({
     filename = '',
@@ -17,7 +17,7 @@ module.exports = function ({
     const targetContentStartLine = commonLineCount + (1 + declarations.length);
     const targetContentCount = countLine(targetContent) - 1;
 
-    sourceMap.setSourceContent(filename, sourceCode);
+    sourceMap.setSourceContent(filename, headCode + sourceCode);
 
     let i = 0;
     while (i < targetContentCount) {
@@ -38,7 +38,7 @@ module.exports = function ({
 };
 
 function getSourceDepsLine(code) {
-    const matched = /define\s*\([^{]*\{\s*/g.exec(code);
+    const matched = /^define\s*\(\s*([^)]*)\)\s*\{\s*/.exec(code);
     return (matched && matched[0]) || '';
 }
 

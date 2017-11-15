@@ -9,6 +9,9 @@ module.exports = function (fn) {
     if (argStr) {
         return argStr.split(',').map(item => {
             return item.replace(/\s*/g, '');
+        }).filter(item => {
+            const variable = (item || '').trim();
+            return !(variable.startsWith('//') || (variable.startsWith('/*') && variable.startsWith('*/')));
         });
     }
     return [];
