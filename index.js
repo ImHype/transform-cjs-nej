@@ -6,11 +6,11 @@ const SourceMap = require( './src/SourceMap');
 function nejLoader({
     raw, filename
 }, {
-    alias,
-    outputAlias,
-    replaceArgs,
-    needSourceMap,
-    isPatch
+    alias = [],
+    outputAlias = [],
+    replaceArgs = {},
+    needSourceMap = false,
+    isPatch = false
 }) {
     
     let refs;
